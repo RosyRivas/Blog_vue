@@ -83,7 +83,7 @@ export default {
     return {
       nombre: "Rosa Rivas Rodriguez",
       profesion: "Developer FullStack",
-      seccionActiva: 0, // Índice de la sección activa (0 para Experiencia, 1 para Proyectos, etc.)
+      seccionActiva: 0, 
       projects: [
         {
           id: 1,
