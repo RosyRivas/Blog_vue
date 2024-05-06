@@ -1,6 +1,6 @@
 <template>
  <v-app>
-  <router-view>
+  
 
     <v-parallax> 
        <div class="parallax-content">
@@ -55,7 +55,7 @@
    
      </SeccionFooter>
 
-  </router-view>
+ 
   </v-app>
 </template>
 
