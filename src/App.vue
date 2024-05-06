@@ -1,57 +1,61 @@
 <template>
  <v-app>
- <v-parallax> 
-    <div class="parallax-content">
-        <div class="app">   
-          <v-row>
-            <v-col cols="12" md="6" class="text-left"> <!-- Alineación a la derecha -->
-              <TabMenu
-                :secciones="['Experiencia', 'Proyectos', 'Estudios', 'Mis Redes']"
-                :seccionActiva="seccionActiva"
-                :cambiarSeccion="cambiarSeccion"
-              />
-            </v-col>
-          </v-row>
-          <v-row>
-            <v-col>
-              <CardTitle :nombre="nombre" :profesion="profesion" />
-            </v-col>
-            <v-col>
-              <SeccionSkills></SeccionSkills>
-            </v-col>
-          </v-row>
-          <div class="seccion-activa">
-          <v-divider></v-divider>
-            <template v-if="seccionActiva === 0">
-              <h2 class="text-center">Experiencia</h2>
-              <ExperienciaLaboral></ExperienciaLaboral>
-            </template>
-            <template v-else-if="seccionActiva === 1">
-                <h2 class="text-center">Proyectos</h2>
-                <v-row>
-                  <v-col v-for="(project, index) in projects" :key="index" cols="12" md="6" lg="4">
-                    <ProyectosPersonales
-                          :project="project"
-                        >
-                        </ProyectosPersonales>
-                  </v-col>
-                </v-row>  
-            </template>
-            <template v-else-if="seccionActiva === 2">
-              <h2 class="text-center">Estudios</h2>
-              <Estudios></Estudios>
-            </template>
-            <template v-else-if="seccionActiva === 3">
-            
-              <RedesSociales></RedesSociales>
-            </template> 
-          </div>
-        </div> 
-    </div>
-  </v-parallax>
-  <SeccionFooter>
+  <router-view>
 
-  </SeccionFooter>
+    <v-parallax> 
+       <div class="parallax-content">
+           <div class="app">   
+             <v-row>
+               <v-col cols="12" md="6" class="text-left"> <!-- Alineación a la derecha -->
+                 <TabMenu
+                   :secciones="['Experiencia', 'Proyectos', 'Estudios', 'Mis Redes']"
+                   :seccionActiva="seccionActiva"
+                   :cambiarSeccion="cambiarSeccion"
+                 />
+               </v-col>
+             </v-row>
+             <v-row>
+               <v-col>
+                 <CardTitle :nombre="nombre" :profesion="profesion" />
+               </v-col>
+               <v-col>
+                 <SeccionSkills></SeccionSkills>
+               </v-col>
+             </v-row>
+             <div class="seccion-activa">
+             <v-divider></v-divider>
+               <template v-if="seccionActiva === 0">
+                 <h2 class="text-center">Experiencia</h2>
+                 <ExperienciaLaboral></ExperienciaLaboral>
+               </template>
+               <template v-else-if="seccionActiva === 1">
+                   <h2 class="text-center">Proyectos</h2>
+                   <v-row>
+                     <v-col v-for="(project, index) in projects" :key="index" cols="12" md="6" lg="4">
+                       <ProyectosPersonales
+                             :project="project"
+                           >
+                           </ProyectosPersonales>
+                     </v-col>
+                   </v-row>  
+               </template>
+               <template v-else-if="seccionActiva === 2">
+                 <h2 class="text-center">Estudios</h2>
+                 <Estudios></Estudios>
+               </template>
+               <template v-else-if="seccionActiva === 3">
+               
+                 <RedesSociales></RedesSociales>
+               </template> 
+             </div>
+           </div> 
+       </div>
+     </v-parallax>
+     <SeccionFooter>
+   
+     </SeccionFooter>
+
+  </router-view>
   </v-app>
 </template>
 

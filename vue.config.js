@@ -5,8 +5,8 @@ module.exports = defineConfig({
   ? '/RosyRivas/Blog_vue/'
   : '/',
   pluginOptions: {
-    vuetify: {
-			// https://github.com/vuetifyjs/vuetify-loader/tree/next/packages/vuetify-loader
-		}
+    //vuetify: {
+			// https:/github.com/vuetifyjs/vuetify-loader/tree/next/packages/vuetify-loader
+		//}
   }
 })
